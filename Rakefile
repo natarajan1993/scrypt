@@ -40,7 +40,7 @@ namespace 'ffi-compiler' do
     target_cpu = RbConfig::CONFIG['target_cpu']
 
     t.cflags << '-Wall -std=c99'
-    t.cflags << '-msse -msse2' if t.platform.arch.include? '86'
+    # t.cflags << '-msse -msse2' if t.platform.arch.include? '86'
     t.cflags << '-D_GNU_SOURCE=1' if RbConfig::CONFIG['host_os'].downcase =~ /mingw/
     t.cflags << '-D_POSIX_C_SOURCE=199309L' if RbConfig::CONFIG['host_os'].downcase =~ /linux/
 
